@@ -7,15 +7,18 @@
 
 using namespace std;
 int main() {
-    string choice1;
-    cout << "Please choose rock, paper or scissors." << endl;
-    getline(cin,choice1);
-    if(choice1 != "rock" && choice1 != "paper" && choice1 != "scissors"){
-        cout <<"You did not enter your choice right. Please choose between rock, paper, scissors"<< endl;
-        getline(cin,choice1);
+   string choice1;
+   cout << "Please choose rock, paper or scissors." <<endl;
+   do {
+       getline(cin,choice1);
 
+       if(choice1 != "rock" && choice1 != "paper" && choice1 != "scissors") {
 
-    }
+           cout << "You did not enter a valid choice. Please choose between rock, paper or scissors."<<endl;
+       }
+   } while (choice1 != "rock" && choice1 != "paper" && choice1 != "scissors");
+
+   cout << "You chose: " <<choice1<< endl;
 
    // randomizing ai choice
     string which[3] = {"rock","paper","scissors"};
